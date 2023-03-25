@@ -202,7 +202,6 @@ public class demo {
 		System.out.println("Hello There");
 		String a = "Shrishti";
 		System.out.print(a);
-		/*
 		Scanner sc = new Scanner(System.in);
 		String newname = sc.next();
 		// next() will take the input only till the first whitespace 
@@ -227,7 +226,6 @@ public class demo {
 			arr[i] = x;
 		}
 		BinarySearch(4, arr, sz);
-		*/
 		//two_D_arrays();
 		Strings();
 	}
