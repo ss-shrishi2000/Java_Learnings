@@ -187,21 +187,107 @@ public class demo {
 		String input = sc.nextLine();
 		System.out.println(input);
 		// String manipulations in Java
+		
+		/*
 		String finalname = name + " " + fullname;
-		System.out.print(finalname);
-		// for the size of the string => finalname.length();
-		// to access any specific character at a given position in Java => charAt(index);
+		System.out.println(finalname);
+		for the size of the string => finalname.length();
+		to access any specific character at a given position in Java => charAt(index);
+		
 		for(int i = 0; i < input.length(); i++)
 		{
 			System.out.println(input.charAt(i));
 		}
+		
+		*/
+		
+		String p1 = "todo";
+		String p2 = "hello";
+		// s1 > s2 => +ive value
+		// s1 == s2 => 0
+		// s1 < s2 => -ive value
+		
+		if(p1.compareTo(p2) == 0)
+			System.out.println("Strings are equal");
+		else
+			System.out.println("Strings aren't equal");
+		
+		// why can't we use "==" symbol for comparing two strings
+		// this is because in many scenarios this condition fails.
+		/*
+		 *   if(new String("Hello") == new String("Hello"))
+		 *   {
+		 *     System.out.print("Equal");
+		 *   }
+		 *   else
+		 *     System.out.print("Not Equal");
+		 */
+		 // In the above scenario; the condition fails because in Java; Strings are Objects
+		// When we declare two objects their memory allocation is always different. Two objects 
+		// might contain certain attributes whose values can be same but they can never be equal.
+		
+		String sentence = "My name is Shri";
+		// sentence.subtring(beginning_index, ending_index)
+		p1 = sentence.substring(4);
+		p2 = sentence.substring(3, 7);
+		System.out.println(p1 + " " + p2);
+		// Strings are immutable in Java and we cannot modify strings once declared
+	}
+	
+	public static void calcFinalLength()
+	{
+		Scanner sc = new Scanner(System.in);
+		String s1 = sc.nextLine();
+		String s2 = sc.nextLine();
+		String s3 = sc.nextLine();
+		int finlength = s1.length() + s2.length() + s3.length();
+		System.out.println("The total length is = " + finlength);
+	}
+	
+	public static void replace()
+	{
+		String s = "resultresultresult";
+		String snew = "";
+		for(int i = 0; i < s.length(); i++)
+		{
+			if(s.charAt(i) == 'e')
+				snew += 'i';
+			else
+				snew += s.charAt(i);
+		}
+		System.out.println(snew);
+	}
+	
+	// Objects are created in Heap whereas variables / data members are created in a stack.
+	
+	public static void StringManipulations() {
+		StringBuilder sb = new StringBuilder("Shrishti");
+		System.out.println(sb);
+		// character at given index => sb.charAt(index)
+		for(int i = 0; i < sb.length(); i++)
+		{
+			if(sb.charAt(i) == 'h')
+			   sb.setCharAt(i, 'a');
+		}
+		System.out.println(sb);
+		// insert a character at a given index
+		
+		sb.insert(0,  'h');
+		System.out.println(sb);
+		
+		// delete any given substring of a string
+		// delete(start, end);
+		// ending index is non-inclusive; i.e; [start, end) => [start, end-1]
+		sb.delete(2, 5);
+		System.out.println(sb);
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Hello There");
 		String a = "Shrishti";
-		System.out.print(a);
+		System.out.println(a);
+		/*
 		Scanner sc = new Scanner(System.in);
 		String newname = sc.next();
 		// next() will take the input only till the first whitespace 
@@ -226,7 +312,10 @@ public class demo {
 			arr[i] = x;
 		}
 		BinarySearch(4, arr, sz);
+		*/
 		//two_D_arrays();
-		Strings();
+		// Strings();
+		replace();
+		StringManipulations();
 	}
 }
