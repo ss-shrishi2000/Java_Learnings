@@ -280,7 +280,74 @@ public class demo {
 		// ending index is non-inclusive; i.e; [start, end) => [start, end-1]
 		sb.delete(2, 5);
 		System.out.println(sb);
+		
+		// append string at the end of the initial string
+		sb.append("Singh");
+		System.out.println(sb);
 	}
+	
+	public static void reverse()
+	{
+		StringBuilder s = new StringBuilder("shrishti");
+		String p = "";
+		//Technique 1:-
+		for(int i = s.length() - 1; i >= 0; i--)
+			p += s.charAt(i);
+		
+		System.out.println(p);
+		//Technique 2:-
+		StringBuilder p2 = s;
+		// toUpperCase, toLowerCase, trim, lastIndexOf, toString(), reverse()
+		p2.reverse();
+		System.out.println(p2);
+		
+		// Technique 3:-
+		for(int i = 0; i < s.length()/2; i++)
+		{
+			int front = i, back = s.length() - 1 - i;
+			char x = s.charAt(front), y = s.charAt(back);
+			char temp = x;
+			x = y;
+			y = temp;
+		}
+		System.out.println(s);
+	}
+	
+	// Data Structures in Java
+	// Arrays => fixed size, contiguous memory locations to store data
+	// ArrayList => LinkedList in C++ => non-contiguous form of storage of data
+	// variable size
+	 public static void arrayLists() {
+		 ArrayList<Integer> lst = new ArrayList<Integer>();
+		 // adding elements into the list
+		 for(int i = 0; i < 10; i++)
+			 lst.add(i);
+		 
+		 System.out.println(lst);
+		 
+		 // get elements at a given index 
+		 int e = lst.get(3);
+		 System.out.println(e);
+		 
+		 // setting a different element than the existing one in a List
+		 lst.set(0, 5);
+		 System.out.println(lst);
+		 
+		 // delete element 
+		 lst.remove(4);
+		 System.out.println(lst);
+		 
+		 // print size of the list
+		 System.out.println(lst.size());
+		 
+		 // looping the ArrayList
+		 for(int i = 0; i < lst.size(); i++)
+			 System.out.println(lst.get(i));
+		 
+		 // sorting the list
+		 Collections.sort(lst);
+		 System.out.println(lst);
+	 }
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -317,5 +384,7 @@ public class demo {
 		// Strings();
 		replace();
 		StringManipulations();
+		reverse();
+		arrayLists();
 	}
 }
