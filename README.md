@@ -1,2 +1,2 @@
-# Java_Learnings
+# Java Coding 
 My compilation of Java coding practices.
